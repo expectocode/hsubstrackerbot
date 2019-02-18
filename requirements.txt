@@ -1,0 +1,5 @@
+pony
+requests
+lxml
+python-telegram-bot
+pytz
