@@ -24,7 +24,7 @@ def show_insert_loop(schedule: ScheduleGenerator):
 
 def listify(schedule: ScheduleGenerator):
     """Pretty print but turns the show data into a list
-    in order to be sent as a inline keyboard buttons"""
+    in order to be sent as inline keyboard buttons"""
     buttonlist = []
     for day in schedule.days:
         buttonlist.append(day)
