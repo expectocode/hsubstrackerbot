@@ -13,14 +13,12 @@ sc = ScheduleGenerator()
 
 def show_insert_loop(schedule: ScheduleGenerator):
     """Grab all the shows from the schedule and insert them
-    into the database."""
-    for day in schedule.days:
-        for show in schedule.generate_schedule():
-            if day is show.day:
-                try:
-                    insert_show(show.title, show.day, show.time)
-                except TransactionIntegrityError:
-                    pass
+    into the database."""e
+    for show in schedule.iter_schedule():
+        try:
+            insert_show(show.title, show.day, show.time)
+        except TransactionIntegrityError:
+            pass
 
 def listify(schedule: ScheduleGenerator):
     """Pretty print but turns the show data into a list
@@ -28,9 +26,8 @@ def listify(schedule: ScheduleGenerator):
     buttonlist = []
     for day in schedule.days:
         buttonlist.append(day)
-        for show in schedule.generate_schedule():
-            if day is show.day:
-                buttonlist.append(f'{show.title} @ {show.time} PST')
+        for show in schedule.iter_schedule(day):
+            buttonlist.append(f'{show.title} @ {show.time} PST')
         buttonlist.append('---------------------------------------')
     return buttonlist
 
