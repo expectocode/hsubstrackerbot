@@ -25,11 +25,14 @@ class ScheduleGenerator:
         self.tablelen = None
         self.title = None
         self.time = None
-        self.generate_schedule()
 
+    def iter_schedule(self, days=None):
+        if not days:
+            days = self.days
+        elif not isinstance(days, (list, tuple)):
+            days = [days]
 
-    def generate_schedule(self):
-        for day in self.days:
+        for day in days:
             # tables start from 1 rather than from 0, 1 day = 1 table
             dayindex = self.days.index(day) + 1
             expr_str = f'//*[@id="post-63"]/div/table[{dayindex}]'
@@ -46,11 +49,10 @@ class ScheduleGenerator:
         self.id += 1
         print(f"Update successful, id: {self.id}")
 
-
     def pretty_print(self):
         for day in self.days:
             print(day)
-            for item in self.generate_schedule():
+            for item in self.iter_schedule(day):
                 if item.day is day:
                     print(f'• {item.title} @ {item.time} PST')
             print('-----------------------------------------')
