@@ -1,6 +1,6 @@
 from pony.orm import *
 
-set_sql_debug(True)
+set_sql_debug(False)
 db = Database()
 
 class User(db.Entity):

@@ -1,4 +1,5 @@
 import requests
+from json import load
 from lxml import html
 from collections import namedtuple
 
@@ -9,14 +10,8 @@ class ScheduleGenerator:
     """
 
     def __init__(self):
-        self.days = [
-            '[Monday]',
-            '[Tuesday]',
-            '[Wednesday]',
-            '[Thursday]',
-            '[Friday]',
-            '[Saturday]',
-            '[Sunday]']
+        self.config = load(open('config.json', 'r'))
+        self.days = self.config['en_gb']['day_array']
         self.show = namedtuple('Show', ['day', 'title', 'time'])
         self.schedulelink = 'https://horriblesubs.info/release-schedule/'
         self.req = requests.get(self.schedulelink)

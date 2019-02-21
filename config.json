@@ -1,0 +1,14 @@
+{
+  "token":"<place_your_token_here>",
+  "en_gb":{
+    "greet_seen": "Hello there! I've seen you before! Sending buttons...",
+    "greet_notseen": "Hello there! I haven't seen you before. Sending buttons...",
+    "pm_only": "Sorry, I only work in PMs for the time being!",
+    "pick_day": "Please pick a day you'd like to see the schedule for:",
+    "shows_day": "Here are the shows for",
+    "day_array": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+  }
+}
+
+
+
