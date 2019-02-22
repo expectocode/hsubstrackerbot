@@ -56,7 +56,7 @@ def build_button_list(days=False, show=False, rtitle=None, gen_whichday=None, u_
 
 def handle_button_press(bot, update):
     """
-    Handles any buttons presses via in-place
+    Handles any button presses via in-place
     message editing
     """
     callback_query = update.callback_query.data.split('@')[0]
