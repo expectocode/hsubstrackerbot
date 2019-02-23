@@ -1,6 +1,6 @@
 import logging
 from json import load
-from telegram import InlineKeyboardMarkup, InlineKeyboardButton, Bot
+from telegram import InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
 from hsubs import ScheduleGenerator
 from database import insert_show, insert_user, check_user_exists, get_show_id_by_name, check_subscribed,\
@@ -114,7 +114,6 @@ def main():
     show_insert_loop(sc)
 
     updater = Updater(config['token'])
-    bot = Bot(token=config['token'])
 
     dp = updater.dispatcher
 
