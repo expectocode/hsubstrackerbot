@@ -33,7 +33,7 @@ def build_button_list(days=False, show=False, rtitle=None, gen_whichday=None, u_
     given state
     """
     if days:
-       return InlineKeyboardMarkup(([[InlineKeyboardButton(day, callback_data=day)] for day in sc.days]))
+        return InlineKeyboardMarkup(([[InlineKeyboardButton(day, callback_data=day)] for day in sc.days]))
 
     if show:
         buttons = []
