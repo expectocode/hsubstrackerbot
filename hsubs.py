@@ -1,7 +1,7 @@
-import requests
 from json import load
-from lxml import html
 from collections import namedtuple
+from lxml import html
+import requests
 
 
 class ScheduleGenerator:
